@@ -1,0 +1,57 @@
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: rgba(128, 128, 128, 0.3);
+  position: relative;
+
+  @media (max-width: 420px) {
+    display: flex;
+    justify-content: center;
+  }
+
+  .list-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 60px;
+
+    @media (max-width: 420px) {
+      position: static;
+    }
+
+    .list {
+      display: flex;
+      gap: 60px;
+      list-style-type: none;
+
+      @media (max-width: 420px) {
+        gap: 40px;
+      }
+
+      &-item {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+
+        @media (max-width: 600px) {
+          cursor: default;
+        }
+
+        a {
+          text-decoration: none;
+          color: #000;
+          transition: color 0.1s ease;
+
+          @media (max-width: 600px) {
+            cursor: default;
+          }
+        }
+      }
+
+      &-item:active a {
+        color: red;
+      }
+    }
+  }
+}

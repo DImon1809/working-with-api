@@ -1,0 +1,41 @@
+.set-status {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 16px auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+
+  &-title {
+    text-align: center;
+  }
+
+  .surprise {
+    width: 90%;
+    text-align: center;
+
+    p {
+      font-weight: 500;
+    }
+  }
+
+  .loading-button-circle {
+    width: 19px;
+    height: 19px;
+    border: 2px dotted #fff;
+    border-radius: 50%;
+    animation: infinite linear rotate-circle 1s;
+  }
+}
+
+@keyframes rotate-circle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

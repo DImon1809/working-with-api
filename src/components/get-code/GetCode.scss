@@ -1,0 +1,117 @@
+@mixin button-mixin {
+  width: 150px;
+  height: 36px;
+  border-radius: 8px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.get-code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  margin: 20px 0;
+  --bg-color: rgb(0, 206, 209);
+
+  .item-wrapper {
+    width: 90%;
+    position: relative;
+
+    input {
+      width: 94%;
+      padding: 2px 6px;
+      background-color: transparent;
+      border: none;
+      outline: 0;
+      border-bottom: 2px solid var(--bg-color);
+    }
+
+    .token {
+      resize: none;
+      width: 85%;
+      background-color: transparent;
+      border: none;
+      padding: 0px 12px 0px 0px;
+      outline: 0;
+
+      &-line {
+        position: absolute;
+        width: 98%;
+        height: 2px;
+        left: 0px;
+        bottom: 56%;
+        background-color: var(--bg-color);
+      }
+    }
+
+    label {
+      position: absolute;
+      left: 0;
+      top: -18px;
+    }
+
+    .eye-wrapper {
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      right: 6px;
+      bottom: 74%;
+      cursor: pointer;
+    }
+
+    .button-gen-code,
+    .button-get-token {
+      @include button-mixin;
+      background-color: var(--bg-color);
+      cursor: pointer;
+      box-shadow: 0px 1px 0px 0.5px #7f7f7f;
+      opacity: 1;
+      transition: all 0.3s ease;
+
+      @media (max-width: 600px) {
+        cursor: default;
+      }
+
+      p {
+        opacity: 1;
+      }
+    }
+
+    .loading-button-circle {
+      width: 19px;
+      height: 19px;
+      border: 2px dotted #fff;
+      border-radius: 50%;
+      animation: infinite linear rotate-circle 1s;
+    }
+
+    .button-get-token:active {
+      transform: translateY(-6px);
+      opacity: 0.5;
+
+      p {
+        opacity: 0.5;
+      }
+    }
+
+    .button-gen-code:active {
+      transform: translateY(-6px);
+      opacity: 0.5;
+
+      p {
+        opacity: 0.5;
+      }
+    }
+
+    .button-exists-code-token {
+      @include button-mixin;
+      background-color: rgba(0, 206, 209, 0.5);
+      cursor: default;
+    }
+  }
+}
